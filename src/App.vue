@@ -1,16 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  
+  <h1 class="text-danger">Learning About Slots</h1>
+  <!-- card 1 -->
+  <Card />
+
+  <!-- card 2 -->
+  <Card>
+     <template #footer>
+      <p><a href="#">card footer</a></p>
+    </template>
+  </Card>
+
+  <!-- card 3 -->
+  <Card>
+    <template #header>
+      <h1>Product Title</h1>
+    </template>
+    <template #body>
+      <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="">
+      <p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+      </p>
+    </template>
+    <template #footer>
+      <div class="d-flex gap-2 justify-content-center">
+        <button class="btn btn-sm btn-info">Buy</button>
+        <button class="btn btn-sm btn-success">Cart</button>
+      </div>
+    </template>
+  </Card>
+
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Card from './components/Card.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Card,
+  },
+  data() {
+    return {
+    }
+  },
+
 }
 </script>
 
